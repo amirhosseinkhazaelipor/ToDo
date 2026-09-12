@@ -1,0 +1,119 @@
+@import "tailwindcss";
+@import "@fontsource-variable/vazirmatn";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --background: oklch(0.985 0.003 260);
+  --foreground: oklch(0.24 0.02 262);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.02 262);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.02 262);
+  --primary: oklch(0.51 0.21 264);
+  --primary-foreground: oklch(0.985 0.003 260);
+  --secondary: oklch(0.955 0.008 262);
+  --secondary-foreground: oklch(0.32 0.03 262);
+  --muted: oklch(0.955 0.008 262);
+  --muted-foreground: oklch(0.52 0.02 262);
+  --accent: oklch(0.945 0.02 264);
+  --accent-foreground: oklch(0.3 0.06 264);
+  --destructive: oklch(0.58 0.24 27);
+  --destructive-foreground: oklch(0.985 0.003 260);
+  --success: oklch(0.6 0.15 155);
+  --success-foreground: oklch(0.985 0.003 260);
+  --warning: oklch(0.72 0.16 72);
+  --warning-foreground: oklch(0.25 0.05 72);
+  --border: oklch(0.915 0.01 262);
+  --input: oklch(0.915 0.01 262);
+  --ring: oklch(0.51 0.21 264);
+  --radius: 0.75rem;
+}
+
+.dark {
+  --background: oklch(0.185 0.02 265);
+  --foreground: oklch(0.93 0.008 262);
+  --card: oklch(0.225 0.022 265);
+  --card-foreground: oklch(0.93 0.008 262);
+  --popover: oklch(0.225 0.022 265);
+  --popover-foreground: oklch(0.93 0.008 262);
+  --primary: oklch(0.65 0.18 264);
+  --primary-foreground: oklch(0.16 0.03 265);
+  --secondary: oklch(0.28 0.02 265);
+  --secondary-foreground: oklch(0.88 0.01 262);
+  --muted: oklch(0.265 0.02 265);
+  --muted-foreground: oklch(0.68 0.015 262);
+  --accent: oklch(0.3 0.04 264);
+  --accent-foreground: oklch(0.92 0.01 262);
+  --destructive: oklch(0.63 0.2 26);
+  --destructive-foreground: oklch(0.16 0.02 265);
+  --success: oklch(0.68 0.15 155);
+  --success-foreground: oklch(0.16 0.03 265);
+  --warning: oklch(0.78 0.14 75);
+  --warning-foreground: oklch(0.2 0.04 75);
+  --border: oklch(0.3 0.02 265);
+  --input: oklch(0.32 0.02 265);
+  --ring: oklch(0.65 0.18 264);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-success: var(--success);
+  --color-success-foreground: var(--success-foreground);
+  --color-warning: var(--warning);
+  --color-warning-foreground: var(--warning-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: "Vazirmatn Variable", "Vazirmatn", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Focus ring visible and consistent for keyboard users (a11y) */
+  :focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin {
+    scrollbar-width: thin;
+  }
+}
